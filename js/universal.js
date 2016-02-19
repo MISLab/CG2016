@@ -40,7 +40,7 @@ var Navigator = React.createClass({
 					null,
 					React.createElement(
 						"a",
-						{ href: "./Homework.html", id:currentPage.homework},
+						{ href: "./homework.html", id:currentPage.homework},
 						"Homework"
 					)
 				),
