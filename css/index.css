@@ -1,0 +1,77 @@
+#title>div{
+	height:600px;
+	background: url(../art/title.png);
+}
+
+.titleBody{
+	width:1024px;
+	margin:0 auto;
+}
+
+#titleName{
+	color:#fff;
+	font-size: 4rem;
+	float: right;
+	margin:400px 20px 0 0;
+	text-shadow: #888 2px 2px;
+	font-weight: 500;
+}
+
+#year{
+	font-size: 2rem;
+}
+
+#infoBody{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+#infoBody:after{
+	clear:both;
+	content: "";
+	display: block;
+}
+
+.infoEle{
+	background: #fff;
+	padding:30px;
+	margin:20px 0;
+  float:left;
+	box-shadow:#888 2px 2px 2px;
+}
+
+#nextLecture{
+	width:calc(65% - 80px);
+	margin-right: 20px;
+}
+
+#week{
+	font-weight: 300;
+	font-size: 1rem;
+}
+
+#courseTitle{
+	font-size: 1.5rem;
+	margin:5px 2rem 0 2rem;
+}
+
+#courseTitle:after, #annTitle:after{
+	display: block;
+	content: "";
+	width:100%;
+  margin:10px 0;
+	border-bottom: #e0e0e0 1px solid;
+}
+
+#courseInfo{
+	font-weight: 300;
+	padding-left: 2rem;
+}
+
+#announcement{
+	width: calc(35% - 60px);
+}
+
+#annTitle{
+	font-size: 1.5rem;
+}

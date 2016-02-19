@@ -1,0 +1,53 @@
+#homeworkBody{
+  width:910px;
+  margin: 20px auto;
+}
+
+#homeworkBody:after{
+  content: "";
+  display:block;
+  clear:both;
+}
+
+.homework{
+  display: inline-block;
+  width:200px;
+  background: #fff;
+  box-shadow: #888 2px 2px 2px;
+  float:left;
+  margin: 10px;
+  height:250px;
+  position: relative;
+}
+
+.homework:after{
+  width:100%;
+	display: inline-block;
+	height:10px;
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	content: "";
+	transition: background ease 0.2s;
+}
+
+.homework:hover:after{
+  background: #8bc3a4;
+}
+
+.img{
+  width:180px;
+  height:120px;
+  background-size: cover;
+  margin:10px;
+}
+
+.title{
+  color:#000;
+  padding:0.5rem 0 0 1rem;
+}
+
+.deadline{
+  color:#f44336;
+  padding:5px 0 0 2rem;
+}
