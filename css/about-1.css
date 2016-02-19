@@ -27,10 +27,7 @@
   position: absolute;
   width:10px;
   height:100%;
-  top:0;
-  left:0;
-  background: #00bcd4;
-  content: "";
+  background: #795548;
 }
 
 .title{

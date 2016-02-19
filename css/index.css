@@ -43,6 +43,17 @@
 #nextLecture{
 	width:calc(65% - 80px);
 	margin-right: 20px;
+	position: relative;
+}
+
+.infoEle:after{
+	content: "";
+	position: absolute;
+	height:100%;
+	background: #ffc107;
+	width:10px;
+	top:0;
+	left:0;
 }
 
 #week{
@@ -70,6 +81,7 @@
 
 #announcement{
 	width: calc(35% - 60px);
+	position: relative;
 }
 
 #annTitle{
