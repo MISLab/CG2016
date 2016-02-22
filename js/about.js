@@ -92,6 +92,25 @@ var Lecturers=React.createClass({
 	}
 });
 
+var Grade=React.createClass({
+	render:function(){
+		return React.createElement(
+			"div",
+			{className:"grade"},
+			React.createElement(
+				"div",
+				{className:"gradeItem"},
+				this.props.item
+			),
+			React.createElement(
+				"div",
+				{className:"gradeScore"},
+				this.props.score
+			)
+		);
+	}
+});
+
 var Grading=React.createClass({
 	render:function(){
 		return React.createElement(
@@ -101,6 +120,26 @@ var Grading=React.createClass({
 				"div",
 				{className:"title"},
 				"Grading"
+			),
+			React.createElement(
+				Grade,
+				{item:"Homework 1", score:"10%"}
+			),
+			React.createElement(
+				Grade,
+				{item:"Homework 2", score:"20%"}
+			),
+			React.createElement(
+				Grade,
+				{item:"Homework 3", score:"20%"}
+			),
+			React.createElement(
+				Grade,
+				{item:"Homework 4", score:"20%"}
+			),
+			React.createElement(
+				Grade,
+				{item:"Project", score:"30%"}
 			)
 		)
 	}

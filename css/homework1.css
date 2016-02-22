@@ -94,3 +94,23 @@ h2{
   color:#000;
   padding:0.5rem 10px;
 }
+
+.listInfo {
+  padding-left: 1rem;
+  font-weight: 300;
+}
+
+.listInfo span{
+  list-style: disc;
+  display: list-item;
+  line-height:1rem;
+}
+
+.alert{
+  color:#f44336;
+}
+
+h3{
+  font-weight: 400;
+  font-size: 1rem;
+}

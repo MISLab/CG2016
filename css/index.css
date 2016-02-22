@@ -56,17 +56,17 @@
 	left:0;
 }
 
-#week{
+.week{
 	font-weight: 300;
 	font-size: 1rem;
 }
 
-#courseTitle{
+.courseTitle{
 	font-size: 1.5rem;
 	margin:5px 2rem 0 2rem;
 }
 
-#courseTitle:after, #annTitle:after{
+.courseTitle:after, #annTitle:after{
 	display: block;
 	content: "";
 	width:100%;
@@ -74,7 +74,7 @@
 	border-bottom: #e0e0e0 1px solid;
 }
 
-#courseInfo{
+.courseInfo{
 	font-weight: 300;
 	padding-left: 2rem;
 }

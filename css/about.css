@@ -82,3 +82,15 @@ p{
   font-weight: 300;
   padding:0 0 0 1rem;
 }
+
+.gradeItem{
+  display: inline-block; 
+  font-weight: 400;
+  width:100px;
+  padding:0.5rem 0 0 1rem;
+}
+
+.gradeScore{
+  display: inline-block;
+  font-weight: 300;
+}

@@ -7,6 +7,10 @@ var courseInfo=[
 	"Introduction of VFX",
 	"Introduction of Unreal Engine 4"
 ];
+var announcement=[
+	"Homework 1",
+	"Deadline: 2016/2/29 22:00"
+];
 
 var TitleElement=React.createClass({
 	render:function(){
@@ -47,6 +51,10 @@ var Info=React.createClass({
 		for(var a in courseInfo){
 			courseInfoEle.push(React.createElement("div", null, courseInfo[a]));
 		}
+		var announcementEle=[];
+		for(var a in announcement){
+			announcementEle.push(React.createElement("div", null, announcement[a]));
+		}
 		return React.createElement(
 			"div",
 			{id:"infoBody"},
@@ -55,17 +63,17 @@ var Info=React.createClass({
 				{id:"nextLecture", className:"infoEle"},
 				React.createElement(
 					"div",
-					{id:"week"},
+					{className:"week"},
 					"Week "+weekNum
 				),
 				React.createElement(
 					"div",
-					{id:"courseTitle"},
+					{className:"courseTitle"},
 					courseTitle
 				),
 				React.createElement(
 					"div",
-					{id:"courseInfo"},
+					{className:"courseInfo"},
 					courseInfoEle
 				)
 			),
@@ -76,6 +84,11 @@ var Info=React.createClass({
 					"div",
 					{id:"annTitle"},
 					"Announcement"
+				),
+				React.createElement(
+					"div",
+					{className:"courseInfo"},
+					announcementEle
 				)
 			)
 		);

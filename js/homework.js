@@ -1,5 +1,5 @@
 var homeworks=[
-	{title:"Homework 1", deadline:"2015/3/1", img:"./art/homework1.png", file:"./homework1.html"}
+	{title:"Homework 1", deadline:"2015/2/29 22:00", img:"./art/homework1.png", file:"./homework1.html"}
 ]
 
 var Homework=React.createClass({
