@@ -20,6 +20,16 @@
   position: relative;
 }
 
+.homework .img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition:background 1s ease;
+}
+
+.homework:hover .img{
+  background-position: bottom;
+}
+
 .homework:after{
   width:100%;
 	display: inline-block;
@@ -36,10 +46,10 @@
 }
 
 .img{
-  width:180px;
-  height:120px;
+  width:100%;
+  height:140px;
   background-size: cover;
-  margin:10px;
+
 }
 
 .title{

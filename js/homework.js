@@ -1,8 +1,8 @@
 var homeworks=[
-	{title:"Homework 1", deadline:"2015/3/1", img:"", file:"./homework1.html"}
+	{title:"Homework 1", deadline:"2015/3/1", img:"./art/homework1.png", file:"./homework1.html"}
 ]
 
-var Lecture=React.createClass({
+var Homework=React.createClass({
 	render:function(){
 		return React.createElement(
 			"a",
@@ -29,7 +29,7 @@ var Main = React.createClass({
 	render: function() {
 		var homeworkEle=[];
 		for(var a in homeworks){
-			homeworkEle.push(React.createElement(Lecture, {title:homeworks[a].title, img:homeworks[a].img, file:homeworks[a].file, deadline:homeworks[a].deadline}))
+			homeworkEle.push(React.createElement(Homework, {title:homeworks[a].title, img:homeworks[a].img, file:homeworks[a].file, deadline:homeworks[a].deadline}))
 		}
 		return React.createElement(
 			"div",
