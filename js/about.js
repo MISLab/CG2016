@@ -127,15 +127,19 @@ var Grading=React.createClass({
 			),
 			React.createElement(
 				Grade,
-				{item:"Homework 2", score:"20%"}
+				{item:"Homework 2", score:"15%"}
 			),
 			React.createElement(
 				Grade,
-				{item:"Homework 3", score:"20%"}
+				{item:"Homework 3", score:"15%"}
 			),
 			React.createElement(
 				Grade,
-				{item:"Homework 4", score:"20%"}
+				{item:"Homework 4", score:"15%"}
+			),
+			React.createElement(
+				Grade,
+				{item:"Paper Presentation", score:"15%"}
 			),
 			React.createElement(
 				Grade,
@@ -166,6 +170,10 @@ var TAs=React.createClass({
 			React.createElement(
 				Person,
 				{name:"朱承昱", mail:"F74011221@ncku.edu.tw"}
+			),
+			React.createElement(
+				Person,
+				{name:"林季伯", mail:"F74012293@ncku.edu.tw"}
 			),
 			React.createElement(
 				"div",
