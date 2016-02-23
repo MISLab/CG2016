@@ -153,7 +153,7 @@ var TAs=React.createClass({
 	render:function(){
 		return React.createElement(
 			"div",
-			{className:"card"},
+			{id:"ta", className:"card"},
 			React.createElement(
 				"div",
 				{className:"title"},
@@ -161,19 +161,24 @@ var TAs=React.createClass({
 			),
 			React.createElement(
 				Person,
-				{name:"黃均暉", mail:"F74006030@ncku.edu.tw"}
+				{name:"黃均暉"}
 			),
 			React.createElement(
 				Person,
-				{name:"許友綸", mail:"F74012138@ncku.edu.tw"}
+				{name:"許友綸"}
 			),
 			React.createElement(
 				Person,
-				{name:"朱承昱", mail:"F74011221@ncku.edu.tw"}
+				{name:"朱承昱"}
 			),
 			React.createElement(
 				Person,
-				{name:"林季伯", mail:"F74012293@ncku.edu.tw"}
+				{name:"林季伯"}
+			),
+			React.createElement(
+				"div",
+				{className:"personInfo"},
+				"E-mail: cg@mislab.csie.ncku.edu.tw"
 			),
 			React.createElement(
 				"div",

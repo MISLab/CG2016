@@ -94,3 +94,7 @@ p{
   display: inline-block;
   font-weight: 300;
 }
+
+#ta .person{
+  margin: 0;
+}
