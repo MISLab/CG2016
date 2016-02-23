@@ -97,7 +97,7 @@ var Tutorial=React.createClass({
 			),
 			React.createElement(
 				"div",
-				{className:"paragraph"},
+				{id:"score", className:"paragraph"},
 				React.createElement(
 					"h2",
 					null,
@@ -144,6 +144,39 @@ var Tutorial=React.createClass({
 						)
 					)
 				)
+			),
+			React.createElement(
+				"div",
+				{id:"example", className:"paragraph"},
+				React.createElement(
+					"h2",
+					null,
+					"Last year example"
+				),
+				React.createElement(
+						"div",
+						null,
+						React.createElement(
+							"div",
+							{className:"exImg", style:{"background-image":"url(./art/hw1_ex1.png)"}}
+						),
+						React.createElement(
+							"div",
+							{className:"exImg", style:{"background-image":"url(./art/hw1_ex2.png)"}}
+						),
+						React.createElement(
+							"div",
+							{className:"exImg", style:{"background-image":"url(./art/hw1_ex3.png)"}}
+						),
+						React.createElement(
+							"div",
+							{className:"exImg", style:{"background-image":"url(./art/hw1_ex4.png)"}}
+						),
+						React.createElement(
+							"div",
+							{className:"exImg", style:{"background-image":"url(./art/hw1_ex5.png)"}}
+						)
+					)
 			)
 		)
 	}

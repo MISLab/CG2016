@@ -33,7 +33,7 @@ header li{
 }
 
 header li:hover{
-	background:#333;
+	background:#303030;
 }
 
 header>ul>span{
@@ -62,7 +62,7 @@ header li a:hover:after{
 }
 
 #currentPage{
-	background: #333;
+	background: #212121;
 }
 
 #currentPage:after{
