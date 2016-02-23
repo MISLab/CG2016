@@ -1,5 +1,5 @@
 var lectures=[
-	{title:"Week 1: Syllabus & Overview of Computer Graphics", img:"./art/week1.png", file:"./file/20150226 Syllabus.pdf"}
+	{title:"Week 1: Syllabus & Overview of Computer Graphics", img:"./art/week1.png", file:"./file/20160223 Syllabus.pdf"}
 ]
 
 var Lecture=React.createClass({
