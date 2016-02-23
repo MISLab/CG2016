@@ -77,12 +77,12 @@ var Tutorial=React.createClass({
 				React.createElement(
 					"div",
 					{className:"listInfo"},
-					"Submit \"Student ID.zip\" to Moodle",
+					"Submit \"Student ID.zip\" to Moodle.",
 					React.createElement(
 						"br",
 						null
 					),
-					"Include your blender project file(*.blend), a wavefront file(*.obj) from your model and a document explains what techniques you used",
+					"Include your blender project file(*.blend), a wavefront file(*.obj) from your model and a document explains what techniques you used and how you made your model.",
 					React.createElement(
 						"br",
 						null
@@ -116,7 +116,33 @@ var Tutorial=React.createClass({
 						"br",
 						null
 					),
-					"Model(70%)"
+					"Model(70%)",
+					React.createElement(
+						"div",
+						{className:"paragraph"},
+						React.createElement(
+							"p",
+							null,
+							"You will only get 10 points if your model is too simple."
+						),
+						React.createElement(
+							"div",
+							{className:"exImg",style:{"background-image":"url(./art/hw1_bad.png)"}}
+						)
+					),
+					React.createElement(
+						"div",
+						{className:"paragraph"},
+						React.createElement(
+							"p",
+							null,
+							"You will get better score if you show more creativity and complexity in your model."
+						),
+						React.createElement(
+							"div",
+							{className:"exImg",style:{"background-image":"url(./art/hw1_70.png)"}}
+						)
+					)
 				)
 			)
 		)

@@ -4,8 +4,7 @@ var courseInfo=[
 	"Introduction of computer graphics",
 	"The relationship between computer graphics, computer vision and image processing",
 	"Applications of Computer Graphics",
-	"Introduction of VFX",
-	"Introduction of Unreal Engine 4"
+	"Introduction of VFX"
 ];
 var announcement=[
 	"Homework 1",
