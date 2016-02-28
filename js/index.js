@@ -11,7 +11,7 @@ var announcement=[
 	"Deadline: 2016/2/29 22:00"
 ];
 var title=[
-	{mainTitle:"Computer Graphic ", subTopic:"2016", img:"./art/title.png"},
+	{mainTitle:"Computer Graphic ", subTopic:"2016", img:"./art/title.png"}
 ]
 
 var titleCount=title.length;
@@ -169,7 +169,7 @@ function changeTitlePage(num){
 	}
 	document.getElementById("titlePage"+currentTitle).className="titleNavEle";
 	document.getElementById("titlePage"+num).className="titleNavEle currentTitle";
-	document.getElementById("innerTitle").style.left=-1024*num+"px"
+	document.getElementById("innerTitle").style.left=-screenWidth*num+"px"
 	currentTitle=num;
 }
 
@@ -185,6 +185,35 @@ function autoChangeTitle(){
 	}
 }
 
+var screenWidth=window.innerWidth||document.documentElement.clientWidth||d.getElementsByTagName('body')[0].clientWidth;
+var addEvent = function(object, type, callback) {
+	if (object == null || typeof(object) == 'undefined') return;
+	if (object.addEventListener) {
+		object.addEventListener(type, callback, false);
+	} else if (object.attachEvent) {
+	object.attachEvent("on" + type, callback);
+	} else {
+	object["on"+type] = callback;
+	}
+};
+
+function resize(){
+	var screenWidthT=window.innerWidth||document.documentElement.clientWidth||d.getElementsByTagName('body')[0].clientWidth;
+	if(screenWidthT>1024){
+	screenWidth=1024;
+	}else if(screenWidthT < 320){
+		screenWidth=320;
+	}else{
+		screenWidth=screenWidthT;
+	}
+	for(var a in title){
+		document.getElementById("title"+a).style.width=screenWidth+"px";
+	}
+	changeTitlePage(currentTitle);
+}
+
 setInterval(autoChangeTitle, 7000);
 currentPage.index="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));
+resize();
+addEvent(window, "resize", resize);
