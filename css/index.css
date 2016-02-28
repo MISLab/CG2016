@@ -1,26 +1,71 @@
-#title>div{
+#title{
+	width:1024px;
 	height:600px;
-	background: url(../art/title.png);
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+#innerTitle{
+	height:100%;
+	position: relative;
+	left:0px;
+	transition: left 2s ease;
+	z-index:1;
 }
 
 .titleBody{
+	height:100%;
 	width:1024px;
-	margin:0 auto;
+  float:left;
 }
 
-#titleName{
+.titleName{
 	color:#fff;
 	font-size: 4rem;
-	float: right;
-	margin:400px 20px 0 0;
 	text-shadow: #888 2px 2px;
 	font-weight: 500;
 }
 
-#year{
-	font-size: 2rem;
+#title0 .titleName{
+	float: right;
+	margin:400px 20px 0 0;
 }
 
+#title0 .mainTitle{
+  display: inline;
+}
+
+#title0 .subTopic{
+	font-size: 2rem;
+	display: inline;
+}
+
+#titleNav{
+	position:absolute;
+	height:10px;
+  left:5px;
+	bottom:10px;
+  z-index: 10;
+}
+
+.titleNavEle{
+	width:50px;
+	height:10px;
+	background:#888;
+	margin:0 5px;
+	float: left;
+	transition: background ease 0.25s;
+	cursor: pointer;
+}
+
+.titleNavEle:hover{
+	background: #6b5c57;
+}
+
+.currentTitle, .currentTitle:hover{
+	background: #795548;
+}
 #infoBody{
 	width: 1024px;
 	margin: 0 auto;
