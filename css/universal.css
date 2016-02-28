@@ -25,10 +25,17 @@ header ul{
 	margin:0 auto;
 }
 
+header ul:after{
+	clear:both;
+	content: "";
+	display: block;
+}
+
 header li{
 	display: inline-block;
 	font-weight: 500;
 	position:relative;
+	background:#555;
 	transition: background ease 0.25s;
 }
 
@@ -78,7 +85,7 @@ footer a{
 }
 
 #footerBody{
-	width:1024px;
+	width:300px;
 	padding:20px 0;
 	margin:0 auto;
 	text-align: center;
@@ -89,3 +96,12 @@ footer a{
 	font-size: 0.7rem;
 	font-weight: 300;
 }
+
+@media screen and (max-width: 1023px){
+	body{
+		min-width: 320px;
+	}
+	header ul{
+		width:100%;
+	}
+} 

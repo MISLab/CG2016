@@ -98,3 +98,14 @@ p{
 #ta .person{
   margin: 0;
 }
+
+@media screen and (max-width: 1023px){
+  #aboutBody{
+    width:calc(100% - 40px);
+    margin:0 auto;
+  }
+  
+  #leftContent, #rightContent{
+    width:100%;
+  }
+} 
