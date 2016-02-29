@@ -11,7 +11,8 @@ var announcement=[
 	"Deadline: 2016/2/29 22:00"
 ];
 var title=[
-	{mainTitle:"Computer Graphic ", subTopic:"2016", img:"./art/title.png"}
+	{mainTitle:"Computer Graphic ", subTopic:"2016", img:"./art/title.png"},
+	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"}
 ]
 
 var titleCount=title.length;
@@ -212,7 +213,7 @@ function resize(){
 	changeTitlePage(currentTitle);
 }
 
-setInterval(autoChangeTitle, 7000);
+setInterval(autoChangeTitle, 5000);
 currentPage.index="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));
 resize();
