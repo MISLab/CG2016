@@ -17,7 +17,7 @@
   box-shadow: #888 2px 2px 2px;
   float:left;
   margin: 10px;
-  height:250px;
+  padding-bottom: 50px;
 }
 
 .lecture:after{
@@ -49,6 +49,37 @@
 .lectureTitle{
   color:#000;
   padding:0.5rem 10px;
+  height:60px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.cardButton{
+  position: absolute;
+  bottom: 10px;
+  height:40px;
+  width:100%;
+}
+
+.slideshowB:hover ,.videoB:hover{
+  background-color: #f8bbd0; 
+}
+
+.slideshowB, .videoB{
+  display: inline-block;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background ease 0.2s;
+}
+
+.slideshowB{
+  background-image: url(../art/slideshow.png);
+}
+
+.videoB{
+  background-image: url(../art/video.png);
 }
 
 @media screen and (max-width: 1023px){
