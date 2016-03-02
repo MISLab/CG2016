@@ -1,14 +1,11 @@
-var weekNum=2;
-var courseTitle="Computer Animation Pipeline";
+var weekNum=3;
+var courseTitle="Data Representation";
 var courseInfo=[
-	"Introduction to computer animation pipeline",
-	"Modeling, texture, rigging, animation, shading, lighting, VFX (particles)",
-	"The idea of art-directable",
-	"Current challenges in computer animation production"
+	"Curve, surface and mesh",
+	"Subdivision surface",
+	"Volume and particle"
 ];
 var announcement=[
-	"Homework 1",
-	"Deadline: 2016/2/29 22:00"
 ];
 var title=[
 	{mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},

@@ -32,7 +32,7 @@
 }
 
 .lecture:hover .lectureImg{
-  background-position: bottom;
+  background-position: bottom right;
 }
 
 .lecture:hover:after{
@@ -43,6 +43,7 @@
   width:100%;
   height:140px;
   background-size: cover;
+  background-position: top left;
   transition:background 1s ease;
 }
 
@@ -63,6 +64,7 @@
 
 .slideshowB:hover ,.videoB:hover{
   background-color: #f8bbd0; 
+  background-position:calc(50% - 2px) calc(50% - 2px);
 }
 
 .slideshowB, .videoB{
@@ -71,7 +73,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: background ease 0.2s;
+  transition: background-color ease 0.2s;
 }
 
 .slideshowB{
