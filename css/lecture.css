@@ -62,8 +62,12 @@
   width:100%;
 }
 
-.slideshowB:hover ,.videoB:hover{
-  background-color: #f8bbd0; 
+.lecture:hover .slideshowB, .lecture:hover .videoB{
+  background-color: #fce4ec;
+}
+
+.lecture:hover .slideshowB:hover ,.lecture:hover .videoB:hover{
+  background-color:#f8bbd0; 
   background-position:calc(50% - 2px) calc(50% - 2px);
 }
 
