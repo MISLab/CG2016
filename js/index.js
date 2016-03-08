@@ -1,9 +1,10 @@
-var weekNum=3;
-var courseTitle="Data Representation";
+var weekNum=4;
+var courseTitle="Rendering Pipeline";
 var courseInfo=[
-	"Curve, surface and mesh",
-	"Subdivision surface",
-	"Volume and particle"
+	"Overview of rendering pipeline",
+	"Shading and shaders",
+	"Color representation and transparency",
+	"Hidden surface removal"
 ];
 var announcement=[
 ];
