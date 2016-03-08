@@ -1,6 +1,7 @@
 var lectures=[
 	{title:"Week 1: Syllabus & Overview of Computer Graphics", img:"./art/week1.png", slideshow:"./file/20160223 Syllabus.pdf", video:"https://www.youtube.com/watch?v=kzx0_wnOlRM"},
-	{title:"Week 2: Computer Animation Pipeline", img:"./art/week2.jpg", slideshow:"./file/20160301 Reference.pdf"}
+	{title:"Week 2: Computer Animation Pipeline", img:"./art/week2.jpg", slideshow:"./file/20160301 Reference.pdf"},
+	{title:"Week 3: Data Representation", img:"./art/week3.png", slideshow:"20160308 Data Representation.pdf"}
 ]
 
 var Lecture=React.createClass({
