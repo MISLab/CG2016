@@ -77,7 +77,7 @@ var Title=React.createClass({
 			),
 			React.createElement(
 				"div",
-				{id:"titleNav", style:{width:60*titleCount+"px"}},
+				{id:"titleNav"/*, style:{width:60*titleCount+"px"}*/},
 				titleNavEle
 			)
 		);

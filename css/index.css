@@ -65,12 +65,14 @@
 }
 
 .titleNavEle{
-	width:50px;
+	width:10px;
 	height:10px;
-	background:#888;
+	border-radius: 5px;
+	background:#ccc;
+	box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 1px;
 	margin:0 5px;
 	float: left;
-	transition: background ease 0.25s;
+	transition: background ease 0.25s, width ease 0.25s;
 	cursor: pointer;
 }
 
@@ -80,6 +82,7 @@
 
 .currentTitle, .currentTitle:hover{
 	background: #795548;
+	width:20px;
 }
 #infoBody{
 	width: 1024px;
