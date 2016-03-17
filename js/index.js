@@ -1,4 +1,4 @@
-var weekNum=4;
+var weekNum=5;
 var courseTitle="Rendering Pipeline";
 var courseInfo=[
 	"Overview of rendering pipeline",
