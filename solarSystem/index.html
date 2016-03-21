@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Solar system</title>
+		<style type="text/css">
+			html, body{
+				padding:0;
+				margin:0;
+				height:100%;
+				overflow:hidden;
+			}
+		</style>
+		<script type="text/javascript" src="./mat4.js"></script>
+		<script id="frag" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 color;
+			varying vec2 textureCoord;
+			uniform sampler2D sampler;
+			void main(void){
+				gl_FragColor=texture2D(sampler, vec2(textureCoord.s, textureCoord.t));
+			}
+		</script>
+		<script id="vertex" type="x-shader/x-vertex">
+			attribute vec3 vertexPosition;
+			attribute vec3 vertexColor;
+			attribute vec2 vertexTextureCoord;
+			uniform mat4 pMatrix;
+			uniform mat4 mVMatrix;
+			varying vec4 color;
+			varying vec2 textureCoord;
+			void main(void){
+				gl_Position=pMatrix*mVMatrix*vec4(vertexPosition, 1.0);
+				color=vec4(vertexColor, 1.0);
+				textureCoord=vertexTextureCoord;
+			}
+		</script>
+		<script src="./ball.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" style="width:100%;height:100%;"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			var verticsBuffer;
+			var verticsIndexBuffer;
+			var vertexColorBuffer;
+			var vertexTextCoorBuffer;
+			var shaderProgram;
+			var textures=[];
+			var gl;
+			var startDate;
+			function initialize(){
+				gl=canvas.getContext("webgl");
+				initShaders();
+				initBuffers();
+				initTexture();
+				gl.clearColor(0.0, 0.0, 0.0, 1.0);
+				gl.enable(gl.DEPTH_TEST);
+				startDate=new Date();
+				window.requestAnimationFrame(draw);
+			}
+
+			function initShaders(){
+				var fragmentShader=getShader(gl, "frag", "fragmentShader");
+				var vertexShader=getShader(gl, "vertex", "vertexShader");
+				shaderProgram=gl.createProgram();
+				gl.attachShader(shaderProgram, vertexShader);
+				gl.attachShader(shaderProgram, fragmentShader);
+				gl.linkProgram(shaderProgram);
+				if(!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)){
+					console.log("failed to initialize program");
+				}
+				gl.useProgram(shaderProgram);
+				shaderProgram.vertexPositionAttribute=gl.getAttribLocation(shaderProgram, "vertexPosition");
+				gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+				shaderProgram.vertexColorAttribute=gl.getAttribLocation(shaderProgram, "vertexColor");
+				gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+				shaderProgram.vertexTextureCoordAttribute=gl.getAttribLocation(shaderProgram, "vertexTextureCoord");
+				gl.enableVertexAttribArray(shaderProgram.vertexTextureCoord);
+				shaderProgram.pMatrix=gl.getUniformLocation(shaderProgram, "pMatrix");
+				shaderProgram.mVMatrix=gl.getUniformLocation(shaderProgram, "mVMatrix");
+			}
+
+			function getShader(gl ,id, shaderType){
+				var shaderScript = document.getElementById(id);
+     			if (!shaderScript) {
+        			return null;
+				}
+				var str="";
+				var a=shaderScript.firstChild;
+				while(a){
+					if(a.nodeType==3){
+						str+=a.textContent;
+					}
+					a=a.nextSibling;
+				}
+				var shader;
+				if(shaderType=="fragmentShader"){
+					shader = gl.createShader(gl.FRAGMENT_SHADER);
+				}else if(shaderType=="vertexShader"){
+					shader = gl.createShader(gl.VERTEX_SHADER);
+				}else{
+					return null;
+				}
+				gl.shaderSource(shader, str);
+				gl.compileShader(shader);
+				if(!gl.getShaderParameter(shader, gl.COMPILE_STATUS)){
+					console.log(gl.getShaderInfoLog(shader));
+					return null;
+				}
+				return shader;
+			}
+
+			function initBuffers(){
+				verticsBuffer=gl.createBuffer();
+				gl.bindBuffer(gl.ARRAY_BUFFER, verticsBuffer);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ballVertex),gl.STATIC_DRAW);
+				vertexTextCoorBuffer=gl.createBuffer();
+				gl.bindBuffer(gl.ARRAY_BUFFER, vertexTextCoorBuffer);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ballTextCoor), gl.STATIC_DRAW);
+				verticsIndexBuffer=gl.createBuffer();
+				gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, verticsIndexBuffer);
+				gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(ballIndex), gl.STATIC_DRAW);
+
+				var vertexColor=[];
+				for(var a=0;a<ballIndex.length;){
+					var color=a/ballIndex.length;
+					vertexColor[a++]=color;
+					vertexColor[a++]=color;
+					vertexColor[a++]=color;
+				}
+				vertexColorBuffer=gl.createBuffer();
+				gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexColor), gl.STATIC_DRAW);
+			}
+
+			function initTexture(){
+				loadTexture("earth");
+				loadTexture("sun");
+			}
+
+			function loadTexture(texture){
+				textures[texture]=gl.createTexture();
+				textures[texture].image=new Image();
+				textures[texture].image.onload=function(){
+					handleTexture(texture);
+				}.bind(this);
+				textures[texture].image.src="./"+texture+".png";
+			}
+
+			function handleTexture(texture){
+				var temp=textures[texture];
+				gl.bindTexture(gl.TEXTURE_2D, temp);
+				gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+				gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, temp.image);
+				if(isPowerOfTwo(temp.image.width)&&isPowerOfTwo(temp.image.height)){
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+				}else{
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+					gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+				}
+				gl.bindTexture(gl.TEXTURE_2D, null);
+				
+			}
+
+			function isPowerOfTwo(i){
+				return (i&(i-1))==0;
+			}
+
+			function draw(){
+				var centerZ=0.0;
+				var devicePixelRatio=window.devicePixelRatio||1;
+				var width = gl.canvas.clientWidth*devicePixelRatio;
+				var height = gl.canvas.clientHeight*devicePixelRatio;
+				var currentDate=new Date();
+				gl.canvas.width=width;
+				gl.canvas.height=height;
+				gl.viewport(0, 0, width, height);
+				gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+				
+				var pMatrix=mat4.perspective(mat4.create(), Math.PI/4, width/height, 0.1, 10000);
+				mat4.rotate(pMatrix, pMatrix, Math.PI/8, [1, 0, 0]);
+				mat4.translate(pMatrix, pMatrix, [2, -2, -5]);
+				var mVMatrix=mat4.identity(mat4.create());
+				
+				gl.bindBuffer(gl.ARRAY_BUFFER, verticsBuffer);
+				gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+				gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+				gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, 3, gl.FLOAT, false, 0, 0)
+				gl.bindBuffer(gl.ARRAY_BUFFER, vertexTextCoorBuffer);
+				gl.vertexAttribPointer(shaderProgram.vertexTextureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
+				gl.uniformMatrix4fv(shaderProgram.pMatrix, false, pMatrix);
+				
+				gl.activeTexture(gl.TEXTURE0);
+				gl.bindTexture(gl.TEXTURE_2D, textures["sun"]);
+				mat4.translate(mVMatrix, mVMatrix, [0, 0, centerZ]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI/25, [-0.43, 1, 0]);
+				mat4.scale(mVMatrix, mVMatrix, [2, 2, 2]);
+				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
+				gl.uniform1i(shaderProgram.samplerUniform, 0);
+				gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, verticsIndexBuffer);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+
+				gl.activeTexture(gl.TEXTURE0);
+				gl.bindTexture(gl.TEXTURE_2D, textures["earth"]);
+				mat4.identity(mVMatrix);
+				mat4.translate(mVMatrix, mVMatrix, [0, 0, centerZ]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*5, [0, 1, 0]);
+				mat4.translate(mVMatrix, mVMatrix, [0, 0, 3]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*5, [0, -1, 0]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/1*2, [-0.43, 1, -0.2]);
+				mat4.scale(mVMatrix, mVMatrix, [1/1.5, 1/1.5, 1/1.5]);
+				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
+				gl.uniform1i(shaderProgram.samplerUniform, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+
+				window.requestAnimationFrame(draw);
+			}
+
+			initialize();
+
+		</script>
+	</body>
+</html>
