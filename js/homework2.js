@@ -2,7 +2,7 @@ var File=React.createClass({
 	render:function(){
 		return React.createElement(
 			"a",
-			{className:"file", href:this.props.file},
+			{className:"file", href:this.props.file, target:"_blank"},
 			React.createElement(
 				"div",
 				{style:{"background-image":"url("+this.props.img+")"}, className:"fileImg"}
