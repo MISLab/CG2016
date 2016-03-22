@@ -187,7 +187,7 @@ var Tutorial=React.createClass({
 				),
 				React.createElement(
 					File,
-					{filename:"Source Code", img: "./art/sourceCode.png"}
+					{filename:"Source Code", img: "./art/sourceCode.png" , file:"https://github.com/flyerchris/cghw2"}
 				),
 				React.createElement(
 					File,
