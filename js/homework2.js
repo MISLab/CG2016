@@ -192,6 +192,10 @@ var Tutorial=React.createClass({
 				React.createElement(
 					File,
 					{filename:"Hackpad", img: "./art/hackpad.png", file:"https://hackpad.com/CGHW2-IbLuMM0Otih"}
+				),
+				React.createElement(
+					File,
+					{filename:"Fun Facts: If the Moon Were Only 1 Pixel", img:"./art/hw2_funFact.png", file:"http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html"}
 				)
 			)
 		)
