@@ -10,7 +10,8 @@ var announcement=[
 ];
 var title=[
 	{mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
-	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"}
+	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"},
+	{mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"}
 ]
 
 var titleCount=title.length;
@@ -18,9 +19,17 @@ var currentTitle=0;
 var changeTitle=true;
 var TitleElement=React.createClass({
 	render:function(){
-		return React.createElement(
+		var iframe=null;
+		if(this.props.content!=undefined){
+			iframe=[
+				React.createElement("iframe", {src:this.props.content, className:"titleIframe"}),
+				React.createElement("div", {className:"titleIframeLink"})
+				];
+		}
+		return React.createElement(	
 			"a",
 			{className:"titleBody", id:"title"+this.props.count, href:this.props.href, style:{"background-image":"url("+this.props.img+")"}},
+			iframe,
 			React.createElement(
 				"div",
 				{className:"titleName"},
@@ -61,7 +70,7 @@ var Title=React.createClass({
 	render:function(){
 		var titleEle=[];
 		for(var a in title){
-			titleEle.push(React.createElement(TitleElement, {mainTitle:title[a].mainTitle, subTopic:title[a].subTopic, img:title[a].img, href:title[a].href, count:a}));
+			titleEle.push(React.createElement(TitleElement, {mainTitle:title[a].mainTitle, subTopic:title[a].subTopic, img:title[a].img, href:title[a].href, count:a, content:title[a].content}));
 		}
 		var titleNavEle=[];
 		for(var a in title){
@@ -77,7 +86,7 @@ var Title=React.createClass({
 			),
 			React.createElement(
 				"div",
-				{id:"titleNav"/*, style:{width:60*titleCount+"px"}*/},
+				{id:"titleNav"},
 				titleNavEle
 			)
 		);

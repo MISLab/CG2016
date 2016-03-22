@@ -188,7 +188,7 @@
 				
 				var pMatrix=mat4.perspective(mat4.create(), Math.PI/4, width/height, 0.1, 10000);
 				mat4.rotate(pMatrix, pMatrix, Math.PI/8, [1, 0, 0]);
-				mat4.translate(pMatrix, pMatrix, [2, -2, -5]);
+				mat4.translate(pMatrix, pMatrix, [1, -2, -5]);
 				var mVMatrix=mat4.identity(mat4.create());
 				
 				gl.bindBuffer(gl.ARRAY_BUFFER, verticsBuffer);
@@ -213,9 +213,9 @@
 				gl.bindTexture(gl.TEXTURE_2D, textures["earth"]);
 				mat4.identity(mVMatrix);
 				mat4.translate(mVMatrix, mVMatrix, [0, 0, centerZ]);
-				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*5, [0, 1, 0]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*20, [0, 1, 0]);
 				mat4.translate(mVMatrix, mVMatrix, [0, 0, 3]);
-				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*5, [0, -1, 0]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/365*20, [0, -1, 0]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/1*2, [-0.43, 1, -0.2]);
 				mat4.scale(mVMatrix, mVMatrix, [1/1.5, 1/1.5, 1/1.5]);
 				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
