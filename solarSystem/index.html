@@ -85,7 +85,7 @@
 			var gl;
 			var startDate;
 			function initialize(){
-				gl=canvas.getContext("webgl");
+				gl=canvas.getContext("webgl")||canvas.getContext("experimental-webgl");
 				initShaders();
 				initBuffers();
 				initTexture();
