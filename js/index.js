@@ -1,5 +1,5 @@
-var weekNum=5;
-var courseTitle="Rendering Pipeline";
+var weekNum=6;
+var courseTitle="Rendering Pipeline & GLSL";
 var courseInfo=[
 	"Overview of rendering pipeline",
 	"Shading and shaders",
@@ -7,11 +7,13 @@ var courseInfo=[
 	"Hidden surface removal"
 ];
 var announcement=[
+	"Homework 2",
+	"Deadline: 2016/04/11 22:00"
 ];
 var title=[
+	{mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"},
 	{mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
-	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"},
-	{mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"}
+	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"}
 ]
 
 var titleCount=title.length;
@@ -219,7 +221,6 @@ function resize(){
 	}
 	changeTitlePage(currentTitle);
 }
-
 setInterval(autoChangeTitle, 5000);
 currentPage.index="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));

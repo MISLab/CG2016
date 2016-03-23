@@ -2,7 +2,8 @@ var lectures=[
 	{title:"Week 1: Syllabus & Overview of Computer Graphics", img:"./art/week1.png", slideshow:"./file/20160223 Syllabus.pdf", video:"https://youtu.be/kzx0_wnOlRM"},
 	{title:"Week 2: Computer Animation Pipeline", img:"./art/week2.jpg", slideshow:"./file/20160301 Reference.pdf"},
 	{title:"Week 3: Data Representation", img:"./art/week3.png", slideshow:"./file/20160308 Data Representation.pdf", video:"https://youtu.be/QxZXDUKvRUI"},
-	{title:"Week 4: Coordinates and Transformations", img:"./art/week4.png", slideshow:"./file/20160315 Coordinates and Transformations.pdf", video:"https://youtu.be/qxw18pHT9oU"}
+	{title:"Week 4: Coordinates and Transformations", img:"./art/week4.png", slideshow:"./file/20160315 Coordinates and Transformations.pdf", video:"https://youtu.be/qxw18pHT9oU"},
+	{title:"Week 5: Talk by Phd. Rong-Hao Liang", img:"http://www.cmlab.csie.ntu.edu.tw/~howieliang/images/portrait2.png", slideshow:"./file/Talk by Phd. Rong-Hao Liang.pdf"}
 ]
 
 var Lecture=React.createClass({

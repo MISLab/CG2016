@@ -40,39 +40,39 @@
 	top:0;
 	left:0;
 }
-#title0 .titleName{
+#title1 .titleName{
 	right:20px;
 	bottom:150px;
 	text-shadow: #888 2px 2px;
 }
 
 
-#title0 .mainTitle{
+#title1 .mainTitle{
   display: inline;
 }
 
-#title0 .subTopic{
+#title1 .subTopic{
 	font-size: 2rem;
 	display: inline;
 }
 
-#title1 .titleName{
+#title2 .titleName{
   left:50px;
 	bottom: 100px;
 	text-shadow: #888 2px 2px;
 }
 
-#title2 .subTopic{
+#title0 .subTopic{
 	font-size: 2rem;
 }
 
-#title2 .titleName{
+#title0 .titleName{
   left:50px;
 	bottom: 200px;
 	text-shadow: #888 2px 2px;
 }
 
-#title1 .subTopic{
+#title2 .subTopic{
 	font-size: 2rem;
 }
 
