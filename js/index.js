@@ -221,7 +221,7 @@ function resize(){
 	}
 	changeTitlePage(currentTitle);
 }
-//setInterval(autoChangeTitle, 5000);
+setInterval(autoChangeTitle, 5000);
 currentPage.index="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));
 resize();
