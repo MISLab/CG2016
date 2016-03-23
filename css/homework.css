@@ -2,7 +2,6 @@
   width:910px;
   margin: 20px auto;
   text-align: center;
-  font-size:0;
 }
 
 
@@ -15,7 +14,6 @@
   height:250px;
   position: relative;
   text-align: left;
-  font-size: 1rem;
 }
 
 .homework .img{
