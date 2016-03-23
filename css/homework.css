@@ -1,23 +1,19 @@
 #homeworkBody{
   width:910px;
   margin: 20px auto;
+  text-align: center;
 }
 
-#homeworkBody:after{
-  content: "";
-  display:block;
-  clear:both;
-}
 
 .homework{
   display: inline-block;
   width:200px;
   background: #fff;
   box-shadow: #888 2px 2px 2px;
-  float:left;
   margin: 10px;
   height:250px;
   position: relative;
+  text-align: left;
 }
 
 .homework .img{

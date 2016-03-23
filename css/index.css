@@ -24,11 +24,17 @@
 
 .titleName{
 	color:#fff;
-	font-size: 4rem;
 	font-weight: 500;
 	position: absolute;
 }
 
+.mainTitle{
+	font-size:4rem;
+}
+
+.subTopic{
+	font-size: 2rem;
+}
 
 .titleIframe, .titleIframeLink{
 	border:0;
@@ -44,16 +50,12 @@
 	right:20px;
 	bottom:150px;
 	text-shadow: #888 2px 2px;
+	font-size: 0;
 }
 
 
-#title1 .mainTitle{
+#title1 .mainTitle, #title1 .subTopic{
   display: inline;
-}
-
-#title1 .subTopic{
-	font-size: 2rem;
-	display: inline;
 }
 
 #title2 .titleName{
@@ -62,18 +64,10 @@
 	text-shadow: #888 2px 2px;
 }
 
-#title0 .subTopic{
-	font-size: 2rem;
-}
-
 #title0 .titleName{
   left:50px;
 	bottom: 200px;
 	text-shadow: #888 2px 2px;
-}
-
-#title2 .subTopic{
-	font-size: 2rem;
 }
 
 #titleNav{
@@ -183,9 +177,29 @@
     margin:0 auto;
 	}
 	
+	#title1 .titleName{
+		left:50px;
+		top:100px;
+		text-shadow: #888 2px 2px;
+	}
+	
+	#title0 .titleName{
+		top:100px;
+	}
+	
 	#nextLecture, #announcement{
 		width:auto;
 		float:none;
 		margin-right:0;
 	}
 } 
+
+@media screen and (max-width: 480px){
+	.mainTitle{
+		font-size: 2rem;
+	}
+	.subTopic{
+		font-size: 0.8rem;
+	}
+	
+}
