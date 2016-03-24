@@ -39,11 +39,27 @@ header li{
 	transition: background ease 0.25s;
 }
 
-header li:hover{
-	background:#303030;
+header li:hover, .navigatorButtontrue, #navigatorButton:hover{
+	background-color:#303030;
 }
 
-header>ul>span{
+#navigatorButton{
+	float: right;
+	width:48px;
+	height:48px;
+	position: relative;
+	background-image: url(../art/navigator.png);
+	background-size: 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+#backgroundfalse, #backgroundtrue{
+  display: none;	
+}
+
+#navigator{
 	float: right;
 }
 
@@ -52,7 +68,7 @@ header li a{
 	padding:15px 20px;
 }
 
-header li a:after{
+header li a:after, #navigatorButton:after{
 	width:100%;
 	display: inline-block;
 	height:5px;
@@ -64,7 +80,7 @@ header li a:after{
 
 }
 
-header li a:hover:after{
+header li a:hover:after, #navigatorButton:hover:after{
 	background: #2196f3;
 }
 
@@ -104,4 +120,39 @@ footer a{
 	header ul{
 		width:100%;
 	}
-} 
+}
+
+@media screen and (max-width: 600px){
+	#navigatorButton{
+		display: inline-block;
+	}
+
+	#navigator{
+		float: none;
+		display: block;
+    position: absolute;
+		background: #000;
+		z-index: 10;
+		right:0;
+	}
+	
+	#navigator li{
+		display: block;
+	}
+	
+	#navigator li a{
+		display: block;
+	}
+	
+	.navigatorfalse{
+		display: none !important;
+	}
+	
+	#backgroundtrue{
+		display: block;
+		position: fixed;
+		height:100%;
+		width:100%;
+		z-index: 9;
+	}
+}

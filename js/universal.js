@@ -1,6 +1,11 @@
 var currentPage={};
-
 var Navigator = React.createClass({
+	getInitialState:function(){
+		return {navigatorState: false};
+	},
+	navigatorButtonOnClick:function(){
+		this.setState({navigatorState:!this.state.navigatorState});
+	},
 	render: function() {
 		return React.createElement(
 			"ul",
@@ -15,8 +20,16 @@ var Navigator = React.createClass({
 				)
 			),
 			React.createElement(
+				"div",
+				{id:"navigatorButton", className:"navigatorButton"+this.state.navigatorState , onClick:this.navigatorButtonOnClick}
+			),
+			React.createElement(
+				"div",
+				{id:"background"+this.state.navigatorState, onClick:this.navigatorButtonOnClick}
+			),
+			React.createElement(
 				"span",
-				null,
+				{id:"navigator", className:"navigator"+this.state.navigatorState},
 				React.createElement(
 					"li",
 					null,
