@@ -10,7 +10,6 @@ var Lecture=React.createClass({
 	render:function(){
 		var slideshowTemp;
 		var videoTemp;
-		var width=100;
 		var buttonCount=0;
 		if(this.props.slideshow!=undefined){
 			buttonCount++;
@@ -18,13 +17,12 @@ var Lecture=React.createClass({
 		if(this.props.video!=undefined){
 			buttonCount++;
 		}
-		width=100/buttonCount;
 		var buttonEle=[];
 		if(this.props.slideshow!=undefined){
-			buttonEle.push(React.createElement("a", {className:"slideshowB", href:this.props.slideshow, target:"_blank", style:{width:width+"%"}}));
+			buttonEle.push(React.createElement("a", {className:"slideshowB buttonCount"+buttonCount, href:this.props.slideshow, target:"_blank"}));
 		}
 		if(this.props.video!=undefined){
-			buttonEle.push(React.createElement("a", {className:"videoB", href:this.props.video, target:"_blank", style:{width:width+"%"}}));
+			buttonEle.push(React.createElement("a", {className:"videoB buttonCount"+buttonCount, href:this.props.video, target:"_blank"}));
 		}
 		return React.createElement(
 			"div",

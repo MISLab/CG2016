@@ -75,6 +75,14 @@
   transition: background-color ease 0.2s;
 }
 
+.buttonCount1{
+  width:100%;
+}
+
+.buttonCount2{
+  width:50%;
+}
+
 .slideshowB{
   background-image: url(../art/slideshow.png);
 }
@@ -88,4 +96,62 @@
     width:calc(100% - 40px);
     margin:0 auto;
   }
-} 
+}
+
+@media screen and (max-width: 480px){
+  #lectureBody{
+    width:100%;
+  }
+  
+  .lecture{
+    width:calc(50% - 2px);
+    margin:1px;
+  }
+}
+
+@media screen and (max-width: 399px){
+  .lecture{
+    width:calc(100% - 50px);
+    height:200px;
+    margin:1px 0;
+    padding: 0 50px 0 0;
+  }
+  
+  .lectureImg{
+    float:left;
+    height:100%;
+    width:140px;
+  }
+  
+  .lectureTitle{
+    padding:0.5rem 10px;
+    height:auto;
+  }
+  
+  .cardButton{
+    bottom: 0px;
+    height:100%;
+    width:40px;
+    right:10px;
+  }
+  
+  .slideshowB, .videoB{
+    float:left;
+    width:100%;
+  }
+  
+  .buttonCount1{
+    height:100%;
+  }
+  
+  .buttonCount2{
+    height:50%;
+  }
+  
+  .lecture:after{
+    height:100%;
+    width:10px;
+    right:0px;
+    left:auto;
+  }
+}

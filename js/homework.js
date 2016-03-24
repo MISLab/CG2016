@@ -14,13 +14,17 @@ var Homework=React.createClass({
 			),
 			React.createElement(
 				"div",
-				{className:"title"},
-				this.props.title
-			),
-			React.createElement(
-				"div",
-				{className:"deadline"},
-				"Deadline: "+this.props.deadline
+				{className:"titleDiv"},
+				React.createElement(
+					"div",
+					{className:"title"},
+					this.props.title
+				),
+				React.createElement(
+					"div",
+					{className:"deadline"},
+					"Deadline: "+this.props.deadline
+				)
 			)
 		);
 	}
