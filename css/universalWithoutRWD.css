@@ -61,6 +61,14 @@ header li a:hover:after{
 	background: #2196f3;
 }
 
+#navigatorButton{
+	display: none;
+}
+
+#backgroundfalse{
+	display: none;
+}
+
 #currentPage{
 	background: #212121;
 }
