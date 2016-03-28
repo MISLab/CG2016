@@ -83,7 +83,7 @@ var Title=React.createClass({
 			{id:"title"},
 			React.createElement(
 				"div",
-				{id:"innerTitle", style:{width:1024*titleCount+"px"}},
+				{id:"innerTitle"},
 				titleEle
 			),
 			React.createElement(
@@ -209,15 +209,20 @@ var addEvent = function(object, type, callback) {
 
 function resize(){
 	var screenWidthT=window.innerWidth||document.documentElement.clientWidth||d.getElementsByTagName('body')[0].clientWidth;
-	if(screenWidthT>1024){
-	screenWidth=1024;
-	}else if(screenWidthT < 320){
+	var screenHeightT=window.innerHeight||document.documentElement.clientHeight||d.getElementsByTagName('body')[0].clientHeight;
+	if(screenWidthT < 320){
 		screenWidth=320;
 	}else{
 		screenWidth=screenWidthT;
 	}
+	if(screenWidthT<=480){
+		screenHeightT=348;
+	}else if(screenHeightT<600){
+		screenHeightT=600;
+	}
 	for(var a in title){
 		document.getElementById("title"+a).style.width=screenWidth+"px";
+		document.getElementById("title").style.height=screenHeightT-48+"px";
 	}
 	changeTitlePage(currentTitle);
 }
