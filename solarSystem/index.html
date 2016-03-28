@@ -192,6 +192,7 @@
 				loadTexture("earth");
 				loadTexture("sun");
 				loadTexture("saturn");
+				loadTexture("jupiter");
 			}
 
 			function loadTexture(texture){
@@ -283,12 +284,25 @@
 				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
 
 				gl.activeTexture(gl.TEXTURE0);
-				gl.bindTexture(gl.TEXTURE_2D, textures["saturn"]);
+				gl.bindTexture(gl.TEXTURE_2D, textures["jupiter"]);
 				mat4.identity(mVMatrix);
 				mat4.translate(mVMatrix, mVMatrix, [0, 0, centerZ]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/1075*40+Math.PI/14*25, [0, 1, 0]);
 				mat4.translate(mVMatrix, mVMatrix, [0, 0, 5]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/1075*40+Math.PI/14*25, [0, -1, 0]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2*10/24*2, [-0.43, 1, -0.2]);
+				mat4.scale(mVMatrix, mVMatrix, [1/2, 1/2, 1/2]);
+				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
+				gl.uniform1i(shaderProgram.samplerUniform, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+
+				gl.activeTexture(gl.TEXTURE0);
+				gl.bindTexture(gl.TEXTURE_2D, textures["saturn"]);
+				mat4.identity(mVMatrix);
+				mat4.translate(mVMatrix, mVMatrix, [0, 0, centerZ]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/537*40+Math.PI/20*25, [0, 1, 0]);
+				mat4.translate(mVMatrix, mVMatrix, [0, 0, 7]);
+				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/537*40+Math.PI/20*25, [0, -1, 0]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI*2/0.5*2, [-0.43, 1, -0.2]);
 				mat4.scale(mVMatrix, mVMatrix, [1/2, 1/2, 1/2]);
 				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
