@@ -1,10 +1,9 @@
-var weekNum=6;
-var courseTitle="Rendering Pipeline & GLSL";
+var weekNum=7;
+var courseTitle="Basic Shading Algorithms (Part II)";
 var courseInfo=[
-	"Overview of rendering pipeline",
-	"Shading and shaders",
-	"Color representation and transparency",
-	"Hidden surface removal"
+	"Shadow",
+	"Normal Mapping",
+	"Anti-aliasing"
 ];
 var announcement=[
 	"Homework 2",
