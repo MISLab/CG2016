@@ -170,9 +170,43 @@ var Main = React.createClass({
 			React.createElement(
 				Footer,
 				null
+			),
+			React.createElement(
+				"div",
+				{id:"entryScene"},
+				React.createElement(
+					"iframe",
+					{id:"entryIframe", src:"./shading/index.html"}
+				),
+				React.createElement(
+					"div",
+					{id:"entryTitleDiv"},
+					React.createElement(
+						"div",
+						{id:"entryMainTitle"},
+						"Homework 3"
+					),
+					React.createElement(
+						"div",
+						{id:"entrySubTitle"},
+						"Shading"
+					)
+				)
 			)
 		)
 	}
 });
 currentPage.homework="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));
+setTimeout(function(){
+	var scene=document.getElementById("entryScene");
+	var sceneTitle=document.getElementById("entryMainTitle");
+	var sceneSubTitle=document.getElementById("entrySubTitle");
+	scene.style.transform="scale(1.2, 1.2)";
+	scene.style.opacity="0";
+	sceneTitle.style.transform="scale(1.2, 1.2)";
+	sceneSubTitle.style.transform="scale(1.2, 1.2)";
+	setTimeout(function(){
+		scene.remove();
+	}, 1000);
+}, 2000);
