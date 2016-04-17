@@ -47,7 +47,7 @@
 	top:0;
 	left:0;
 }
-#title1 .titleName{
+#titlecg .titleName{
 	right:5%;
 	bottom:20%;
 	text-shadow: #888 2px 2px;
@@ -55,20 +55,27 @@
 }
 
 
-#title1 .mainTitle, #title1 .subTopic{
+#titlecg .mainTitle, #titlecg .subTopic{
   display: inline;
 }
 
-#title2 .titleName{
+#titlehw1 .titleName{
   left:50px;
 	bottom: 100px;
 	text-shadow: #888 2px 2px;
 }
 
-#title0 .titleName{
+#titlehw2 .titleName{
   left:10%;
 	top: 40%;
 	text-shadow: #888 2px 2px;
+}
+
+#titlehw3 .titleName{
+  top:50%;
+	left:50%;
+	text-align: center;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 #titleNav{

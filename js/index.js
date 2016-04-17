@@ -1,18 +1,19 @@
-var weekNum=7;
-var courseTitle="Basic Shading Algorithms (Part II)";
+var weekNum=8;
+var courseTitle="Surface Reconstruction";
 var courseInfo=[
-	"Shadow",
-	"Normal Mapping",
-	"Anti-aliasing"
+	"Reconstruction algorithms",
+	"Surface smoothing",
+	"Point cloud"
 ];
 var announcement=[
-	"Homework 2",
-	"Deadline: 2016/04/11 22:00"
+	"Homework 3",
+	"Deadline: 2016/05/02 22:00"
 ];
 var title=[
-	{mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"},
-	{mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
-	{mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"}
+	{id:"hw3", mainTitle:"Homework 3", subTopic:"Shading", content:"./shading/index.html", href:"./homework3.html"},
+	{id:"cg", mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
+	{id:"hw1", mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"},
+	{id:"hw2", mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"}	
 ]
 
 var titleCount=title.length;
@@ -29,7 +30,7 @@ var TitleElement=React.createClass({
 		}
 		return React.createElement(	
 			"a",
-			{className:"titleBody", id:"title"+this.props.count, href:this.props.href, style:{"background-image":"url("+this.props.img+")"}},
+			{className:"titleBody", id:"title"+this.props.id, href:this.props.href, style:{"background-image":"url("+this.props.img+")"}},
 			iframe,
 			React.createElement(
 				"div",
@@ -71,7 +72,7 @@ var Title=React.createClass({
 	render:function(){
 		var titleEle=[];
 		for(var a in title){
-			titleEle.push(React.createElement(TitleElement, {mainTitle:title[a].mainTitle, subTopic:title[a].subTopic, img:title[a].img, href:title[a].href, count:a, content:title[a].content}));
+			titleEle.push(React.createElement(TitleElement, {mainTitle:title[a].mainTitle, subTopic:title[a].subTopic, img:title[a].img, href:title[a].href, id:title[a].id, count:a, content:title[a].content}));
 		}
 		var titleNavEle=[];
 		for(var a in title){
@@ -220,11 +221,18 @@ function resize(){
 		screenHeightT=600;
 	}
 	for(var a in title){
-		document.getElementById("title"+a).style.width=screenWidth+"px";
+		document.getElementById("title"+title[a].id).style.width=screenWidth+"px";
 		document.getElementById("title").style.height=screenHeightT-48+"px";
 	}
 	changeTitlePage(currentTitle);
 }
+
+function animation(){
+	
+}
+
+
+
 setInterval(autoChangeTitle, 5000);
 currentPage.index="currentPage";
 ReactDOM.render(React.createElement(Main, null), document.getElementById("main"));
