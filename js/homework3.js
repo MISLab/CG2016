@@ -133,7 +133,7 @@ var Tutorial=React.createClass({
 						"br",
 						null
 					),
-					"Blinn–Phong shading(20%)"
+					"Contribute to hackpad(20%)"
 				)
 			),
 			React.createElement(
