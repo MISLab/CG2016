@@ -1,9 +1,10 @@
 var weekNum=8;
-var courseTitle="Surface Reconstruction";
+var courseTitle="Image Processing";
 var courseInfo=[
-	"Reconstruction algorithms",
-	"Surface smoothing",
-	"Point cloud"
+	"DOF and Bokeh",
+	"High Dynamic Range Image",
+	"Image Blending",
+	"Physically Based Optical Effects"
 ];
 var announcement=[
 	"Homework 3",
@@ -215,23 +216,17 @@ function resize(){
 	}else{
 		screenWidth=screenWidthT;
 	}
-	if(screenWidthT<=480){
-		screenHeightT=348;
-	}else if(screenHeightT<600){
-		screenHeightT=600;
+	if (screenWidthT <= 480) {
+		screenHeightT = 348;
+	} else if (screenHeightT < 600) {
+		screenHeightT = 600;
 	}
-	for(var a in title){
+	for (var a in title) {
 		document.getElementById("title"+title[a].id).style.width=screenWidth+"px";
 		document.getElementById("title").style.height=screenHeightT-48+"px";
 	}
 	changeTitlePage(currentTitle);
 }
-
-function animation(){
-	
-}
-
-
 
 setInterval(autoChangeTitle, 5000);
 currentPage.index="currentPage";
