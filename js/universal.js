@@ -62,6 +62,15 @@ var Navigator = React.createClass({
 					null,
 					React.createElement(
 						"a",
+						{ href: "./reference.html", id:currentPage.reference},
+						"Reference"
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
 						{ href: "./project.html", id:currentPage.project},
 						"Project"
 					)
