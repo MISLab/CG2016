@@ -267,7 +267,7 @@
 				gl.uniformMatrix4fv(sunShaderProgram.mVMatrix, false, mVMatrix);
 				gl.uniform1i(sunShaderProgram.samplerUniform, 0);
 				gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, verticsIndexBuffer);
-				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length, gl.UNSIGNED_SHORT, 0);
 
 				gl.useProgram(shaderProgram);
 				gl.uniformMatrix4fv(shaderProgram.pMatrix, false, pMatrix);
@@ -283,7 +283,7 @@
 				mat4.scale(mVMatrix, mVMatrix, [1/3, 1/3, 1/3]);
 				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
 				gl.uniform1i(shaderProgram.samplerUniform, 1);
-				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length, gl.UNSIGNED_SHORT, 0);
 
 				gl.activeTexture(gl.TEXTURE2);
 				gl.bindTexture(gl.TEXTURE_2D, textures["jupiter"]);
@@ -296,7 +296,7 @@
 				mat4.scale(mVMatrix, mVMatrix, [1/2, 1/2, 1/2]);
 				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
 				gl.uniform1i(shaderProgram.samplerUniform, 2);
-				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length, gl.UNSIGNED_SHORT, 0);
 
 				gl.activeTexture(gl.TEXTURE3);
 				gl.bindTexture(gl.TEXTURE_2D, textures["saturn"]);
@@ -309,7 +309,7 @@
 				mat4.scale(mVMatrix, mVMatrix, [1/2, 1/2, 1/2]);
 				gl.uniformMatrix4fv(shaderProgram.mVMatrix, false, mVMatrix);
 				gl.uniform1i(shaderProgram.samplerUniform, 3);
-				gl.drawElements(gl.TRIANGLES, ballIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, ballIndex.length, gl.UNSIGNED_SHORT, 0);
 
 				window.requestAnimationFrame(draw);
 			}

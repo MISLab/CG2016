@@ -263,7 +263,7 @@
 				mat4.translate(mVMatrix, mVMatrix, [-2, 1.5, centerZ]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI/25, [0, 1, 0]);
 				gl.uniformMatrix4fv(noneSP.mVMatrix, false, mVMatrix);
-				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length, gl.UNSIGNED_SHORT, 0);
 				gl.disableVertexAttribArray(noneSP.vertexPositionAttribute);
 				
 				gl.useProgram(flatSP);
@@ -280,7 +280,7 @@
 				mat4.translate(mVMatrix, mVMatrix, [2, 1.5, centerZ]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI/25, [0, 1, 0]);
 				gl.uniformMatrix4fv(flatSP.mVMatrix, false, mVMatrix);
-				gl.drawElements(gl.TRIANGLES, monkeyFlatVertexIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, monkeyFlatVertexIndex.length, gl.UNSIGNED_SHORT, 0);
 
 				mVMatrix=mat4.identity(mat4.create());
 				gl.bindBuffer(gl.ARRAY_BUFFER, monkeyVertexBuffer);
@@ -293,7 +293,7 @@
 				mat4.translate(mVMatrix, mVMatrix, [-2, -1.5, centerZ]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI/25, [0, 1, 0]);
 				gl.uniformMatrix4fv(flatSP.mVMatrix, false, mVMatrix);
-				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length, gl.UNSIGNED_SHORT, 0);
 				gl.disableVertexAttribArray(flatSP.vertexPositionAttribute);				
 				gl.disableVertexAttribArray(flatSP.vertexNormalAttribute);				
 
@@ -311,7 +311,7 @@
 				mat4.translate(mVMatrix, mVMatrix, [2, -1.5, centerZ]);
 				mat4.rotate(mVMatrix, mVMatrix, (currentDate- startDate)/1000*Math.PI/25, [0, 1, 0]);
 				gl.uniformMatrix4fv(phongSP.mVMatrix, false, mVMatrix);
-				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length-1, gl.UNSIGNED_SHORT, 0);
+				gl.drawElements(gl.TRIANGLES, monkeyVertexIndex.length, gl.UNSIGNED_SHORT, 0);
 				gl.disableVertexAttribArray(phongSP.vertexPositionAttribute);				
 				gl.disableVertexAttribArray(phongSP.vertexNormalAttribute);
 
