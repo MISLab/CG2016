@@ -57,7 +57,7 @@ var Tutorial=React.createClass({
 				React.createElement(
 					"p",
 					null,
-					"Post progressing enhances the graphic and can be used to create stunning effects. In the graphical pipeline, the technique usually works with \"render-to-texture\" and \"render buffers\".",
+					"Post progressing enhances the graphic and can be used to create stunning effects. In the graphics pipeline, the technique usually works with \"render-to-texture\" and \"render buffers\".",
 					React.createElement(
 						"div",
 						{className:"paragraph"},
@@ -74,7 +74,7 @@ var Tutorial=React.createClass({
 					React.createElement(
 						"p",
 						{className:"alert"},
-						"You can only apply the effects by using openGL and GLSL. CPU-based algorithm and image library are forbidden."
+						"You can only apply the effects by using GPU-based algorithms.  Image libraries such as OpenCV are forbidden."
 					)
 				)
 			),
