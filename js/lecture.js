@@ -5,7 +5,8 @@ var lectures=[
 	{title:"Week 4: Coordinates and Transformations", img:"./art/week4.png", slideshow:"./file/20160315 Coordinates and Transformations.pdf", video:"https://youtu.be/qxw18pHT9oU"},
 	{title:"Week 5: Talk by Phd. Rong-Hao Liang", img:"http://www.cmlab.csie.ntu.edu.tw/~howieliang/images/portrait2.png", slideshow:"./file/Talk by Phd. Rong-Hao Liang.pdf"},
 	{title:"Week 6: Shading", img:"./art/week6.png", slideshow:"./file/20160329 Basic Shading.pdf", video:"https://youtu.be/SRModLX8cOU"},
-	{title:"Week 7: Mapping", img:"./art/week7.jpg", slideshow:"./file/20160412 Mapping.pdf", video:"https://youtu.be/GMwqkfSiggo"}
+	{title:"Week 7: Mapping", img:"./art/week7.jpg", slideshow:"./file/20160412 Mapping.pdf", video:"https://youtu.be/GMwqkfSiggo"},
+	{title:"Week 8: Image Processing", img:"./art/week8.png", slideshow:"./file/20160419 Image Processing.pdf", video:"https://youtu.be/QdEZKaoBkR8"}
 ]
 
 var Lecture=React.createClass({
