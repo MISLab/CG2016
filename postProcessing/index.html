@@ -57,10 +57,16 @@
 		</script>
 		<script id="postV" type="x-shader/x-vertex">
 			attribute vec3 vertexPosition;
+			uniform mat4 mVMatrix;
 			varying vec2 coord;
 			void main(void){
 				gl_Position=vec4(vertexPosition, 1.0);
-				coord=(vertexPosition.xy+vec2(1.0, 1.0))/2.0;
+				vec4 tempCoord=vec4(vertexPosition, 1.0);
+				tempCoord=tempCoord/vec4(2.0, 2.0, 1.0, 1.0);
+				tempCoord=mVMatrix*tempCoord;
+				tempCoord=tempCoord+vec4(0.5, 0.5, 0.0, 0.0);
+				//coord=(vertexPosition.xy+vec2(1.0, 1.0))/2.0;
+				coord=tempCoord.xy;
 			}
 		</script>
 	</head>
@@ -112,6 +118,7 @@
 				postPS.vertexPositionAttribute=gl.getAttribLocation(postPS, "vertexPosition");
 				postPS.samplerUniform=gl.getUniformLocation(postPS, "sampler");
 				postPS.intensity=gl.getUniformLocation(postPS, "intensity");
+				postPS.mVMatrix=gl.getUniformLocation(postPS, "mVMatrix");
 			}
 
 			function getShader(gl ,id, shaderType){
@@ -187,7 +194,7 @@
 				
 				gl.bindFramebuffer(gl.FRAMEBUFFER, frameBuffer);
 				gl.viewport(0, 0, frameBuffer.width, frameBuffer.height);
-				var pMatrix=mat4.perspective(mat4.create(), Math.PI/10, width/height, 0.1, 10000);
+				var pMatrix=mat4.perspective(mat4.create(), Math.PI/6, width/height, 0.1, -3000);
 				mat4.translate(pMatrix, pMatrix, [0, 0, -20]);
 				gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 				gl.useProgram(programShader);
@@ -200,13 +207,13 @@
 				for(var a=0;a<lines.length;a++){
 					var line=lines[a];
 					var timeDiff=currentDate-line.time;
-					if(timeDiff>8000){
+					if(timeDiff>5000){
 						lines.splice(a, 1);
 						a--;
 						continue;
 					}
 					mVMatrix=mat4.clone(line.rotate);
-					mat4.translate(mVMatrix, mVMatrix, [timeDiff/5, 0, 0]);
+					mat4.translate(mVMatrix, mVMatrix, [timeDiff, 0, 0]);
 					mat4.scale(mVMatrix, mVMatrix, line.size);
 					gl.uniformMatrix4fv(programShader.mVMatrix, false, mVMatrix);
 					gl.uniform3fv(programShader.color, line.color);
@@ -229,22 +236,39 @@
 				gl.bindTexture(gl.TEXTURE_2D, texture);
 				gl.uniform1i(postPS.samplerUniform, 0);
 				gl.uniform1f(postPS.intensity, Math.sin((currentDate-startDate)/2000)*2*Math.PI);
+				mVMatrix=mat4.create();
+				if(width>height){
+					mat4.scale(mVMatrix, mVMatrix, [1, height/width, 1]);
+				}else{
+					mat4.scale(mVMatrix, mVMatrix, [width/height, 1, 1]);
+				}
+				gl.uniformMatrix4fv(postPS.mVMatrix, false, mVMatrix);
 				gl.drawElements(gl.TRIANGLES, vertexIndex.length, gl.UNSIGNED_SHORT, 0);
 				gl.disableVertexAttribArray(postPS.vertexPositionAttribute);
 
 				if(lines.length>1000){
 					lines.splice(0, 100);
 				}
-				lines.push(new Line());
-				lines.push(new Line());
+				var rand=Math.random()*4;
+				for(var a=0;a<rand;a++){
+					lines.push(new Line());
+				}
 				window.requestAnimationFrame(draw);
+				console.log(lines.length);
 			}
 
 			function Line(){
-				this.position=Math.random()*200+1;
-				this.size=[Math.random()*50+20, Math.random()*0.1+0.05, 1];
+				var rand=Math.random();
+				if(rand>0.7){
+					this.position=Math.random()*100+200;
+				}else if(rand >0.3){
+					this.position=Math.random()*100+50;
+				}else{
+					this.position=Math.random()*50+1;	
+				}
+				this.size=[Math.random()*100+40, Math.random()*0.1+0.05, 1];
 				this.rotate=mat4.identity(mat4.create());
-				mat4.translate(this.rotate, this.rotate, [0, 0, -1000]);
+				mat4.translate(this.rotate, this.rotate, [0, 0, -2000]);
 				mat4.rotate(this.rotate, this.rotate, Math.random()*2*Math.PI, [0, 0, 1]);
 				mat4.translate(this.rotate, this.rotate, [this.position, 0, 0]);
 				mat4.rotate(this.rotate, this.rotate, Math.PI*0.5, [0, -1, 0]);
