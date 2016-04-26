@@ -1,10 +1,9 @@
-var weekNum=8;
-var courseTitle="Image Processing";
+var weekNum=9;
+var courseTitle="Surface Reconstruction";
 var courseInfo=[
-	"DOF and Bokeh",
-	"High Dynamic Range Image",
-	"Image Blending",
-	"Physically Based Optical Effects"
+	"Structure from Motion",
+	"Reconstruction from Different Kinds of Data",
+	"Point Cloud Library"
 ];
 var announcement=[
 	"Homework 3",
