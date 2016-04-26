@@ -235,7 +235,7 @@
 				gl.activeTexture(gl.TEXTURE0);
 				gl.bindTexture(gl.TEXTURE_2D, texture);
 				gl.uniform1i(postPS.samplerUniform, 0);
-				gl.uniform1f(postPS.intensity, Math.sin((currentDate-startDate)/2000)*2*Math.PI);
+				gl.uniform1f(postPS.intensity, Math.sin((currentDate-startDate)/2000)*2*Math.PI*1.5);
 				mVMatrix=mat4.create();
 				if(width>height){
 					mat4.scale(mVMatrix, mVMatrix, [1, height/width, 1]);
@@ -254,7 +254,7 @@
 					lines.push(new Line());
 				}
 				window.requestAnimationFrame(draw);
-				console.log(lines.length);
+				//console.log(lines.length);
 			}
 
 			function Line(){
