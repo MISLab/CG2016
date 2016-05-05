@@ -24,7 +24,7 @@
 }
 
 .homework:hover .img{
-  background-position: bottom;
+  background-position: bottom right;
 }
 
 .homework:after{
