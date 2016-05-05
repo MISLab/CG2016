@@ -6,8 +6,6 @@ var courseInfo=[
 	"Point Cloud Library"
 ];
 var announcement=[
-	"Homework 3",
-	"Deadline: 2016/05/02 22:00",
 	"Homework 4",
 	"Deadline: 2016/05/16 22:00"
 ];
