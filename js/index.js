@@ -1,9 +1,7 @@
-var weekNum=9;
-var courseTitle="Surface Reconstruction";
+var weekNum=10;
+var courseTitle="Computer Animation";
 var courseInfo=[
-	"Structure from Motion",
-	"Reconstruction from Different Kinds of Data",
-	"Point Cloud Library"
+	"Lecture by Shih-Chin Weng"
 ];
 var announcement=[
 	"Homework 4",
