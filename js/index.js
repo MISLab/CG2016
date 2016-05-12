@@ -1,5 +1,5 @@
-var weekNum=10;
-var courseTitle="Computer Animation";
+var weekNum=11;
+var courseTitle="Physically Based Rendering";
 var courseInfo=[
 	"Lecture by Shih-Chin Weng"
 ];

@@ -7,7 +7,9 @@ var lectures=[
 	{title:"Week 6: Shading", img:"./art/week6.png", slideshow:"./file/20160329 Basic Shading.pdf", video:"https://youtu.be/SRModLX8cOU"},
 	{title:"Week 7: Mapping", img:"./art/week7.jpg", slideshow:"./file/20160412 Mapping.pdf", video:"https://youtu.be/GMwqkfSiggo"},
 	{title:"Week 8: Image Processing", img:"./art/week8.png", slideshow:"./file/20160419 Image Processing.pdf", video:"https://youtu.be/QdEZKaoBkR8"},
-	{title:"Week 9: Surface Reconstruction", img:"./art/week9.png", slideshow:"./file/20160503 Surface Reconstruction.pdf", video:"https://youtu.be/XjE7C-w8dCw"}
+	{title:"Week 9: Surface Reconstruction", img:"./art/week9.png", slideshow:"./file/20160503 Surface Reconstruction.pdf", video:"https://youtu.be/XjE7C-w8dCw"},
+	{title:"Week 10: Computer Animation part 1", img:"./art/week10-1.png", slideshow:"./file/20160510 Computer Animation.pdf", video:"https://youtu.be/za8ZYJGOTRw"},
+	{title:"Week 10: Computer Animation part 2", img:"./art/week10-2.png", slideshow:"./file/20160510 Self-Study Tips.pdf"}
 ]
 
 var Lecture=React.createClass({
