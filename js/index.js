@@ -1,18 +1,16 @@
-var weekNum=11;
-var courseTitle="Physically Based Rendering";
+var weekNum=12;
+var courseTitle="Physically Based Rendering (conti.)";
 var courseInfo=[
 	"Lecture by Shih-Chin Weng"
 ];
 var announcement=[
-	"Homework 4",
-	"Deadline: 2016/05/16 22:00"
 ];
 var title=[
-	{id:"hw4", mainTitle:"Homework 4", subTopic:"Post-processing", content:"./postProcessing/index.html", href:"./homework4.html"},
 	{id:"cg", mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
 	{id:"hw1", mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"},
 	{id:"hw2", mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"},
-	{id:"hw3", mainTitle:"Homework 3", subTopic:"Shading", content:"./shading/index.html", href:"./homework3.html"}
+	{id:"hw3", mainTitle:"Homework 3", subTopic:"Shading", content:"./shading/index.html", href:"./homework3.html"},
+	{id:"hw4", mainTitle:"Homework 4", subTopic:"Post-processing", content:"./postProcessing/index.html", href:"./homework4.html"}
 ]
 
 var titleCount=title.length;
