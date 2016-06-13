@@ -10,7 +10,9 @@ var lectures=[
 	{title:"Week 9: Surface Reconstruction", img:"./art/week9.png", slideshow:"./file/20160503 Surface Reconstruction.pdf", video:"https://youtu.be/XjE7C-w8dCw"},
 	{title:"Week 10: Computer Animation part 1", img:"./art/week10-1.png", slideshow:"./file/20160510 Computer Animation.pdf", video:"https://youtu.be/za8ZYJGOTRw"},
 	{title:"Week 10: Computer Animation part 2", img:"./art/week10-2.png", slideshow:"./file/20160510 Self-Study Tips.pdf", video:"https://youtu.be/za8ZYJGOTRw?t=1h44m16s"},
-	{title:"Week 11: Physically Based Rendering", img:"./art/week11.png", slideshow:"./file/20160524 Physical-Based Rendering.pdf", video:"https://youtu.be/pHAtTUm_yOE"}
+	{title:"Week 11: Physically Based Rendering", img:"./art/week11.png", slideshow:"./file/20160524 Physical-Based Rendering.pdf", video:"https://youtu.be/pHAtTUm_yOE"},
+	{title:"Week 12: Global Illumination I", img:"./art/week12.png", slideshow:"./file/20160531 Global Illumination I.pdf", video:"https://youtu.be/fRChHf9YaRE"},
+	{title:"Week 13: Global Illumination II", img:"./art/week12.png", slideshow:"./file/20160607 Global Illumination II.pdf", video:"https://youtu.be/G0tG5PazkUg"}
 ]
 
 var Lecture=React.createClass({
