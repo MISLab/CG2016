@@ -1,7 +1,6 @@
-var weekNum=12;
-var courseTitle="Physically Based Rendering (conti.)";
+var weekNum=13;
+var courseTitle="Structure from Motion";
 var courseInfo=[
-	"Lecture by Shih-Chin Weng"
 ];
 var announcement=[
 ];
