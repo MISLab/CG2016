@@ -57,7 +57,7 @@ var Navigator = React.createClass({
 						"Homework"
 					)
 				),
-				React.createElement(
+				/*React.createElement(
 					"li",
 					null,
 					React.createElement(
@@ -65,7 +65,7 @@ var Navigator = React.createClass({
 						{ href: "./reference.html", id:currentPage.reference},
 						"Reference"
 					)
-				),
+				),*/
 				React.createElement(
 					"li",
 					null,
