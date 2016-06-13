@@ -5,7 +5,7 @@ var presentations=[
 	{title:"Group 4: Data-Driven Interactive Quadrangulation", img:"./art/pst_4.jpg", file:"https://youtu.be/M8DuzWpDidI"},
 	{title:"Group 5: Real-time High-fidelity Facial Performance Capture", img:"./art/pst_5.png", file:"https://youtu.be/iGFcaxlPP_Q"},
 	{title:"Group 6: Dynamically Balanced and Plausible Trajectory Planning for Human-Like Characters", img:"./art/pst_6.jpg", file:" https://youtu.be/GIQJBgpKZuM"},
-	{title:"Group 7: Augmented Reality Instruction for Object Assembly based on Markerless Tracking", img:"", file:"https://youtu.be/0cV1QtLzBvU"},
+	{title:"Group 7: Augmented Reality Instruction for Object Assembly based on Markerless Tracking", img:"./art/pst_7.png", file:"https://youtu.be/0cV1QtLzBvU"},
 	{title:"Group 11: Style Compatibility for 3D Furniture Models", img:"./art/pst_11.png", file:"https://youtu.be/4DdPMciKNQA"},
 	{title:"Group 12: Time-lapse Mining from Internet Photos", img:"./art/pst_12.jpg", file:"https://youtu.be/dlabDHhoTGI"},
 	{title:"Group 14: Guided Ecological Simulation for Artistic Rditing of Plant Distributions in Natural Scenes", img:"./art/pst_14.png", file:"https://youtu.be/P9TzLSuAbNg"},
