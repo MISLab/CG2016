@@ -19,6 +19,7 @@
 	width:1024px;
 	position: relative;
 	background-size: cover;
+	background-position: center;
 	display: inline-block;
 }
 
@@ -80,6 +81,20 @@
 
 #titlehw4 .titleName{
 	font-family: 'Titillium Web';
+}
+
+#titlefinal .titleName{
+	left:50%;
+	bottom:10%;
+	transform: translateX(-50%);
+	text-align: center;
+  font-family: "Work Sans";
+	font-weight: 100;
+}
+
+#titlefinal .subTopic{
+	margin-top: 1rem;
+	letter-spacing: 1rem;
 }
 
 #titleNav{

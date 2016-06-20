@@ -4,7 +4,8 @@ var courseInfo=[
 ];
 var announcement=[
 ];
-var title=[
+var title = [
+	{id:"final", mainTitle:"Final Presentation", subTopic:"2016.06.28", img:"./art/final.png"},
 	{id:"cg", mainTitle:"Computer Graphics ", subTopic:"2016", img:"./art/title.png"},
 	{id:"hw1", mainTitle:"Homework 1", subTopic:"3D Modeling", img:"./art/blenderTitle.png", href:"./homework1.html"},
 	{id:"hw2", mainTitle:"Homework 2", subTopic:"Basic Rendering System", content:"./solarSystem/index.html", href:"./homework2.html"},
