@@ -1,5 +1,5 @@
-var weekNum=13;
-var courseTitle="Structure from Motion";
+var weekNum=15;
+var courseTitle="Final Presentation";
 var courseInfo=[
 ];
 var announcement=[
